@@ -16,5 +16,5 @@ This is SSR application can be used for monitoring the number of goods in store.
  *   "uuidv4": "^6.2.13"
 
 ## Links
-*  - link to the github
-* - deploy link
+*  - link to the github :  https://github.com/wiut16194/WT_CW2_00016194.git
+* - deploy link : https://product-database-bhqo.onrender.com
