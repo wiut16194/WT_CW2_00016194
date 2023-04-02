@@ -1,0 +1,46 @@
+extends layout.pug 
+block content 
+    .container
+        form.add-product-form
+            h2 Update Product
+            label(for='code') Product Code
+            input#code(type='text', name='code', placeholder='Enter  product code', value=`${product.code}`,required)
+            label(for='name') Product Name
+            input#name(type='text', name='name', placeholder='Enter product name', value=`${product.name}`, required )
+            label(for='price') Product Price
+            input#price(type='number', name='price', placeholder='Enter product price($)', value=`${product.price}`, required)
+            label(for='quantity') Quantity
+            input#quantity(type='number', name='quantity', placeholder='Enter product quantity', value=`${product.quantity}`, required)
+        button.update-button( onclick=`updateProduct('${product.id}')`) Update Product
+block scripts
+    script.
+        async function updateProduct(id) {
+            console.log(id)
+            const form = document.querySelector('.add-product-form');
+            console.log(form)
+            const name = form.querySelector('#name').value;
+            const code = form.querySelector('#code').value;
+            const price = parseInt(form.querySelector('#price').value);
+            const quantity = parseInt(form.querySelector('#quantity').value)
+            const body = { id, name, code, price, quantity };
+            console.log(body)
+            try{
+                const res = await fetch(`/products/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                })
+            
+                    if (res.ok) {
+                        alert('Successfully updated')
+                        location.href='/products';
+                    } else {
+                        alert('Error Updating user');
+                    }
+                }catch(err){
+                    console.log(err.message)
+                }
+            
+        }

@@ -1,0 +1,45 @@
+extends layout.pug
+
+block content 
+
+    table.table
+        thead
+          tr
+      
+            th Code
+            th Name
+            th Quantity
+            th Price $
+            th Edit 
+            th Delete 
+        tbody
+          each product in products
+            tr
+              td= product.code
+              td= product.name
+              td= product.quantity
+              td= product.price
+              td.edit-cell
+                form.edit-form(action=`/products/update-form/${product.id}`)
+                  button.edit(type='submit') Edit 
+              td.delete-cell
+                button.delete(type='submit',onclick=`deleteProduct('${product.id}')`) Delete
+   
+
+
+
+block scripts
+    script.
+      async function deleteProduct(id) {
+         const res = await fetch(`/products/${id}`, {
+            method: 'DELETE',
+          })
+          
+        if (res.ok) {
+            console.log('true')
+            alert('successfully deleted')
+            location.reload();
+        } else {
+            alert('Error Occured');
+        }
+     }

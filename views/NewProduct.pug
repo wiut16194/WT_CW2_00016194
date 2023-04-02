@@ -1,0 +1,17 @@
+extends layout.pug 
+
+block content 
+    if success
+        p.succcess Product is added 
+    .container
+      form.add-user-form(action='/products', method='POST')
+        h2 Add New Product
+        label(for='code') Code
+        input#name(type='text', name='code', placeholder='Enter Code', required)
+        label(for='name') Name
+        input#email(type='text', name='name', placeholder='Enter Name', required )
+        label(for='quantity') Quantity
+        input#address(type='number', name='quantity', placeholder='Enter Quantity', required)
+        label(for='price') Price
+        input#course(type='number', name='price', placeholder='Enter price($)', required)
+        button(type='submit') Add Product

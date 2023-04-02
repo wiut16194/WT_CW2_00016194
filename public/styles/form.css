@@ -1,0 +1,48 @@
+.container form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .container label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .container input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .container input:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(255, 165, 0, 0.8);
+  }
+  
+  .container button {
+    display: block;
+    background-color: #ffa500;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .container button:hover {
+    background-color: #ff8c00;
+  }

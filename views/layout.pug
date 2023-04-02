@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+    head
+        title Product Database
+        link(rel="stylesheet", href="/static/styles/home.css")
+        link(rel="stylesheet", href="/static/styles/table.css")
+        link(rel="stylesheet", href="/static/styles/form.css")
+
+
+    body 
+        header.navbar
+            h1
+                a(href="/") Product Database
+
+            nav.nav
+                a.options(href="/products/new-form") New  
+                a.options(href="/products") Stock       
+
+        block content 
+        block scripts       
